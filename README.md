@@ -4,7 +4,7 @@
 
 NOTE:
 If you do not enter limit, lang or country values, the default language and country code are set to English. Limit Number default is 1.
-Please Check https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 For Language and Country Codes.
+Please Check [ISO_3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) For Language and Country Codes.
 
 ### EXAMPLE FOR USAGE
 ````js
