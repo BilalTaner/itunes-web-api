@@ -1,0 +1,19 @@
+{
+  "name": "itunes-web-api",
+  "version": "1.0.4",
+  "description": "iTunes WEB API Scrapper. Get iTunes track/trackvideo/artist/album/movie/app/book/voicebook/podcast infos with their names.",
+  "main": "index.js",
+  "keywords": ["itunes", "itunes-api", "fetch-itunesapi", "apple", "apple-api", "itunes-web"],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shynox, sroxynartz, theark",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BilalTaner/valorantajan.git"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
