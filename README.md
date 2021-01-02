@@ -1,5 +1,5 @@
 ## WELCOME TO ITUNES WEB API! 
-## WARNING!! (IF U ARE USING VER 1.0.4 or LOWER PLEASE UPDATE YOUR MODULE) 
+## WARNING!! (IF U ARE USING VER 1.0.5 or LOWER PLEASE UPDATE YOUR MODULE) 
 ### NOTE: OPTIONS ARE OPTIONAL - NOT NECESSARY
 
 NOTE:
@@ -9,61 +9,61 @@ Please Check [ISO_3166](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) For La
 ### EXAMPLE FOR USAGE
 ````js
 //##### USAGE FOR TRACK INFO #####\\
-const itunes = require('itunes-api');
+const itunes = require('itunes-web-api');
 let data = await itunes.track(songName, {limit: Number, lang: 'lang-code', country: 'country-code'})
 console.log(data)//track infos in resulst array
 
 
 //##### USAGE FOR TRACK-VIDEO INFO #####\\
-const itunes = require('itunes-api');
+const itunes = require('itunes-web-api');
 let data = await itunes.trackVideo(songName, {limit: Number, lang: 'lang-code', country: 'country-code'})
 console.log(data) //album infos in resulst array
 
 
 //##### USAGE FOR ARTIST INFO #####\\
-const itunes = require('itunes-api');
+const itunes = require('itunes-web-api');
 let data = await itunes.artist(artistName, {limit: Number, lang: 'lang-code', country: 'country-code'})
 console.log(data) //album infos in resulst array
 
 
 //##### USAGE FOR ALBUM INFO #####\\
-const itunes = require('itunes-api');
+const itunes = require('itunes-web-api');
 let data = await itunes.album(albumName, {limit: Number, lang: 'lang-code', country: 'country-code'})
 console.log(data) //album infos in resulst array
 
 
 //##### USAGE FOR APP INFO #####\\
-const itunes = require('itunes-api');
+const itunes = require('itunes-web-api');
 let data = await itunes.app(songName, {limit: Number, lang: 'lang-code', country: 'country-code'})
 console.log(data)//app infos in resulst array
 
 
 //##### USAGE FOR MOVIE INFO #####\\
-const itunes = require('itunes-api');
+const itunes = require('itunes-web-api');
 let data = await itunes.movie(movieName, {limit: Number, lang: 'lang-code', country: 'country-code'})
 console.log(data)//movie infos in resulst array
 
 
 //##### USAGE FOR BOOK INFO #####\\
-const itunes = require('itunes-api');
+const itunes = require('itunes-web-api');
 let data = await itunes.book(bookName, {limit: Number, lang: 'lang-code', country: 'country-code'})
 console.log(data)//book infos in resulst array
 
 
 //##### USAGE FOR VOICE-BOOK INFO #####\\
-const itunes = require('itunes-api');
+const itunes = require('itunes-web-api');
 let data = await itunes.voicebook(voicebookName, {limit: Number, lang: 'lang-code', country: 'country-code'})
 console.log(data)//voice-book infos in resulst array
 
 
 //##### USAGE FOR PODCAST INFO #####\\
-const itunes = require('itunes-api');
+const itunes = require('itunes-web-api');
 let data = await itunes.voicebook(voicebookName, {limit: Number, lang: 'lang-code', country: 'country-code'})
 console.log(data)//podcast infos in resulst array
 
 
 //##### USAGE FOR ALL INFO #####\\
-const itunes = require('itunes-api');
+const itunes = require('itunes-web-api');
 let data = await itunes.searchAll(searchString, entity, attribute, {limit: Number, lang: 'lang-code', country: 'country-code'})
 //entity examples === movie, album, allArtist, podcast, musicVideo, mix, audiobook, tvSeason, allTrack
 
@@ -72,7 +72,7 @@ console.log(data)//string infos in resulst array
 ````
 ##### EXAMPLE OUTPUT FOR TRACK
 ```js
-const itunes = require('itunes-api');
+const itunes = require('itunes-web-api');
 let data = await itunes.track(songName, {limit: Number, lang: 'lang-code', country: 'country-code'})
 console.log(data)
 /* data OUTPUT
