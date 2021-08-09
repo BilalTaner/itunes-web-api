@@ -11,6 +11,6 @@ export {
   getVoiceBook,
   getPodcast,
   getAll,
-} from "./src/itunesmain";
+} from "./functions/main";
 
-export * from "./src/@types/type";
+export * from "./@types/type";

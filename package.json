@@ -1,7 +1,7 @@
 {
   "name": "itunes-web-api",
-  "version": "1.0.8",
-  "description": "iTunes WEB API Scrapper. Get iTunes track/trackvideo/artist/album/movie/app/book/voicebook/podcast infos with their names.",
+  "version": "2.0.0",
+  "description": "iTunes Web API Scrapper. Get iTunes track/trackvideo/artist/album/movie/app/book/voicebook/podcast infos with their names.",
   "main": "dist",
   "keywords": [
     "itunes",

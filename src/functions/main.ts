@@ -1,9 +1,12 @@
 "use strict";
 
 import fetch from "node-fetch";
-import { options, entity, attribute } from "./@types/type";
+import { options, entity, attribute, ReturnTypes } from "../@types/type";
 
-export async function getSong(name: string, options?: options) {
+export async function getSong(
+  name: string,
+  options?: options
+): Promise<ReturnTypes> {
   const res = await fetch(
     `https://itunes.apple.com/search?term=${encodeURI(
       name
@@ -23,7 +26,10 @@ export async function getSong(name: string, options?: options) {
   throw new Error("Song not found.");
 }
 
-export async function getSongVideo(name: string, options?: options) {
+export async function getSongVideo(
+  name: string,
+  options?: options
+): Promise<ReturnTypes> {
   const res = await fetch(
     `https://itunes.apple.com/search?term=${encodeURI(
       name
@@ -43,7 +49,10 @@ export async function getSongVideo(name: string, options?: options) {
   throw new Error("Song not found.");
 }
 
-export async function getArtist(name: string, options?: options) {
+export async function getArtist(
+  name: string,
+  options?: options
+): Promise<ReturnTypes> {
   const res = await fetch(
     `https://itunes.apple.com/search?term=${encodeURI(
       name
@@ -63,7 +72,10 @@ export async function getArtist(name: string, options?: options) {
   throw new Error("Artist not found.");
 }
 
-export async function getAlbum(name: string, options?: options) {
+export async function getAlbum(
+  name: string,
+  options?: options
+): Promise<ReturnTypes> {
   const res = await fetch(
     `https://itunes.apple.com/search?term=${encodeURI(
       name
@@ -83,7 +95,10 @@ export async function getAlbum(name: string, options?: options) {
   throw new Error("Album not found.");
 }
 
-export async function getApp(name: string, options?: options) {
+export async function getApp(
+  name: string,
+  options?: options
+): Promise<ReturnTypes> {
   const res = await fetch(
     `https://itunes.apple.com/search?term=${encodeURI(
       name
@@ -103,7 +118,10 @@ export async function getApp(name: string, options?: options) {
   throw new Error("App not found.");
 }
 
-export async function getMovie(name: string, options?: options) {
+export async function getMovie(
+  name: string,
+  options?: options
+): Promise<ReturnTypes> {
   const res = await fetch(
     `https://itunes.apple.com/search?term=${encodeURI(
       name
@@ -123,7 +141,10 @@ export async function getMovie(name: string, options?: options) {
   throw new Error("Movie not found.");
 }
 
-export async function getBook(name: string, options?: options) {
+export async function getBook(
+  name: string,
+  options?: options
+): Promise<ReturnTypes> {
   const res = await fetch(
     `https://itunes.apple.com/search?term=${encodeURI(
       name
@@ -143,7 +164,10 @@ export async function getBook(name: string, options?: options) {
   throw new Error("Book not found.");
 }
 
-export async function getVoiceBook(name: string, options?: options) {
+export async function getVoiceBook(
+  name: string,
+  options?: options
+): Promise<ReturnTypes> {
   const res = await fetch(
     `https://itunes.apple.com/search?term=${encodeURI(
       name
@@ -163,7 +187,10 @@ export async function getVoiceBook(name: string, options?: options) {
   throw new Error("Voice Book not found.");
 }
 
-export async function getPodcast(name: string, options?: options) {
+export async function getPodcast(
+  name: string,
+  options?: options
+): Promise<ReturnTypes> {
   const res = await fetch(
     `https://itunes.apple.com/search?term=${encodeURI(
       name

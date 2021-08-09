@@ -11,11 +11,11 @@ ES5 Syntax
 ```js
 const { getSong } = require("itunes-web-api");
 
-song("Lil Nas X, Jack Harlow - INDUSTRY BABY ", {
+getSong("Lil Nas X, Jack Harlow - INDUSTRY BABY", {
   limit: 1,
   language: "en",
   country: "US",
-}).then((result) => console.log(result.result)); // -> { song object }
+}).then((result) => console.log(result)); // -> { song object }
 ```
 
 ES6 Syntax
@@ -24,61 +24,55 @@ ES6 Syntax
 import { getSong } from "itunes-web-api";
 
 const main = async () => {
-  await getSong("Lil Nas X, Jack Harlow - INDUSTRY BABY ", {
+  const result = await getSong("Lil Nas X, Jack Harlow - INDUSTRY BABY", {
     limit: 1,
     language: "en",
     country: "US",
   });
 
-  console.log(result.result); // -> { song object }
+  console.log(result); // -> { song object }
 };
 
 main();
 ```
 
-##### Example Output
+##### Example Output for Song
 
 ```json
 {
-  "resultCount": 1,
-  "results": [
-    {
-      "wrapperType": "track",
-      "kind": "song",
-      "artistId": 1400730578,
-      "collectionId": 1468166325,
-      "trackId": 1468166457,
-      "artistName": "Lil Nas X & Cardi B",
-      "collectionName": "7 - EP",
-      "trackName": "Rodeo",
-      "collectionCensoredName": "7 - EP",
-      "trackCensoredName": "Rodeo",
-      "collectionArtistName": "Lil Nas X",
-      "artistViewUrl": "https://music.apple.com/us/artist/lil-nas-x/1400730578?uo=4",
-      "collectionViewUrl": "https://music.apple.com/us/album/rodeo/1468166325?i=1468166457&uo=4",
-      "trackViewUrl": "https://music.apple.com/us/album/rodeo/1468166325?i=1468166457&uo=4",
-      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview123/v4/9e/33/d3/9e33d321-54f9-07cc-e3ad-4070f2b91007/mzaf_7571049535424902725.plus.aac.p.m4a",
-      "artworkUrl30": "https://is2-ssl.mzstatic.com/image/thumb/Music113/v4/0d/f9/28/0df92898-90d1-6e15-3b04-9a860feabd0d/source/30x30bb.jpg",
-      "artworkUrl60": "https://is2-ssl.mzstatic.com/image/thumb/Music113/v4/0d/f9/28/0df92898-90d1-6e15-3b04-9a860feabd0d/source/60x60bb.jpg",
-      "artworkUrl100": "https://is2-ssl.mzstatic.com/image/thumb/Music113/v4/0d/f9/28/0df92898-90d1-6e15-3b04-9a860feabd0d/source/100x100bb.jpg",
-      "collectionPrice": 6.99,
-      "trackPrice": 1.29,
-      "releaseDate": "2019-06-21T07:00:00Z",
-      "collectionExplicitness": "explicit",
-      "trackExplicitness": "explicit",
-      "discCount": 1,
-      "discNumber": 1,
-      "trackCount": 8,
-      "trackNumber": 5,
-      "country": "USA",
-      "currency": "USD",
-      "primaryGenreName": "Alternative",
-      "contentAdvisoryRating": "Explicit",
-      "isStreamable": true
-    }
-  ]
+  "wrapperType": "track",
+  "kind": "song",
+  "artistId": 1400730578,
+  "collectionId": 1576552540,
+  "trackId": 1576552565,
+  "artistName": "Lil Nas X & Jack Harlow",
+  "collectionName": "INDUSTRY BABY - Single",
+  "trackName": "INDUSTRY BABY",
+  "collectionCensoredName": "INDUSTRY BABY - Single",
+  "trackCensoredName": "INDUSTRY BABY",
+  "artistViewUrl": "https://music.apple.com/us/artist/lil-nas-x/1400730578?uo=4",
+  "collectionViewUrl": "https://music.apple.com/us/album/industry-baby/1576552540?i=1576552565&uo=4",
+  "trackViewUrl": "https://music.apple.com/us/album/industry-baby/1576552540?i=1576552565&uo=4",
+  "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/63/c5/9a/63c59a18-6610-173c-5a78-65a06fb251cc/mzaf_9849876950553161459.plus.aac.p.m4a",
+  "artworkUrl30": "https://is2-ssl.mzstatic.com/image/thumb/Music115/v4/2d/43/83/2d438323-6b09-b746-c05a-f36014244599/source/30x30bb.jpg",
+  "artworkUrl60": "https://is2-ssl.mzstatic.com/image/thumb/Music115/v4/2d/43/83/2d438323-6b09-b746-c05a-f36014244599/source/60x60bb.jpg",
+  "artworkUrl100": "https://is2-ssl.mzstatic.com/image/thumb/Music115/v4/2d/43/83/2d438323-6b09-b746-c05a-f36014244599/source/100x100bb.jpg",
+  "collectionPrice": 1.29,
+  "trackPrice": 1.29,
+  "releaseDate": "2021-07-23T12:00:00Z",
+  "collectionExplicitness": "explicit",
+  "trackExplicitness": "explicit",
+  "discCount": 1,
+  "discNumber": 1,
+  "trackCount": 1,
+  "trackNumber": 1,
+  "trackTimeMillis": 212000,
+  "country": "USA",
+  "currency": "USD",
+  "primaryGenreName": "Hip-Hop/Rap",
+  "contentAdvisoryRating": "Explicit",
+  "isStreamable": true
 }
-*/
 ```
 
 ## WARNING!
