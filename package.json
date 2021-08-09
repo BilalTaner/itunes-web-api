@@ -1,6 +1,6 @@
 {
   "name": "itunes-web-api",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "iTunes Web API Scrapper. Get iTunes track/trackvideo/artist/album/movie/app/book/voicebook/podcast infos with their names.",
   "main": "dist",
   "keywords": [
@@ -15,10 +15,12 @@
     "format": "prettier --write .",
     "start": "node dist/index.js",
     "dev": "nodemon index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "preinstall": "tsc"
   },
   "author": "shynox",
   "license": "MIT",
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BilalTaner/itunes-web-api.git"
