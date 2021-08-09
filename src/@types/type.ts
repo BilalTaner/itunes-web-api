@@ -45,7 +45,7 @@ export type attribute =
   | "movieTerm"
   | "albumTerm";
 
-export interface ReturnTypes {
+export type ReturnTypes = {
   resultCount: number;
   results: [any: {}];
-}
+};

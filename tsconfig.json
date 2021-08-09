@@ -11,6 +11,7 @@
     "incremental": true,
     "strict": true,
     "strictNullChecks": false,
+    "declaration": true,
     "typeRoots": ["node_modules/@types", "src/@types"],
     "skipLibCheck": true
   },
