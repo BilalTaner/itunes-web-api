@@ -215,7 +215,7 @@ export async function getAll(
   entity: entity,
   attribute: attribute,
   options?: options
-) {
+): Promise<ReturnTypes> {
   const res = await fetch(
     `https://itunes.apple.com/search?term=${encodeURI(
       name
