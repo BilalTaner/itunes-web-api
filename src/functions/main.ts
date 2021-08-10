@@ -6,208 +6,217 @@ import { options, entity, attribute, ReturnTypes } from "../@types/type";
 export async function getSong(
   name: string,
   options?: options
-): Promise<ReturnTypes> {
-  const res = await fetch(
-    `https://itunes.apple.com/search?term=${encodeURI(
-      name
-    )}&media=music&limit=${options.limit ?? "1"}&lang=${
-      options.language ?? "en"
-    }&country=${options.country ?? "US"}`
-  )
-    .then((x) => x.json())
-    .catch((e) => console.log(e));
-
-  if (!res.resultCount) throw new Error("Resulsts are doesn't exist.");
-  if (res.errorMessage)
-    throw new TypeError(
-      `Unspecified language or country. ${res.errorMessage}\nPlease Check https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2`
+): Promise<ReturnTypes | void> {
+  try {
+    const res = await fetch(
+      `https://itunes.apple.com/search?term=${encodeURI(
+        name
+      )}&media=music&limit=${options.limit ?? "1"}&lang=${
+        options.language ?? "en"
+      }&country=${options.country ?? "US"}`
     );
-  if (res) return res;
-  throw new Error("Song not found.");
+
+    const json: ReturnTypes = await res.json();
+
+    return json;
+  } catch (e: any) {
+    const errorTouse: Error = e;
+    const { message, name, stack } = errorTouse;
+
+    console.log({ message, name, stack });
+  }
 }
 
 export async function getSongVideo(
   name: string,
   options?: options
-): Promise<ReturnTypes> {
-  const res = await fetch(
-    `https://itunes.apple.com/search?term=${encodeURI(
-      name
-    )}&media=musicVideo&limit=${options.limit ?? "1"}&lang=${
-      options.language ?? "en"
-    }&country=${options.country ?? "US"}`
-  )
-    .then((x) => x.json())
-    .catch((e) => console.log(e));
-
-  if (!res.resultCount) throw new Error("Resulsts are doesn't exist.");
-  if (res.errorMessage)
-    throw new TypeError(
-      `Unspecified language or country. ${res.errorMessage}\nPlease Check https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2`
+): Promise<ReturnTypes | void> {
+  try {
+    const res = await fetch(
+      `https://itunes.apple.com/search?term=${encodeURI(
+        name
+      )}&media=musicVideo&limit=${options.limit ?? "1"}&lang=${
+        options.language ?? "en"
+      }&country=${options.country ?? "US"}`
     );
-  if (res) return res;
-  throw new Error("Song not found.");
+
+    const json: ReturnTypes = await res.json();
+
+    return json;
+  } catch (e: any) {
+    const errorTouse: Error = e;
+    const { message, name, stack } = errorTouse;
+
+    console.log({ message, name, stack });
+  }
 }
 
 export async function getArtist(
   name: string,
   options?: options
-): Promise<ReturnTypes> {
-  const res = await fetch(
-    `https://itunes.apple.com/search?term=${encodeURI(
-      name
-    )}&entity=allArtist&attribute=allArtistTerm&limit=${
-      options.limit ?? "1"
-    }&lang=${options.language ?? "en"}&country=${options.country ?? "US"}`
-  )
-    .then((x) => x.json())
-    .catch((e) => console.log(e));
-
-  if (!res.resultCount) throw new Error("Resulsts are doesn't exist.");
-  if (res.errorMessage)
-    throw new TypeError(
-      `Unspecified language or country. ${res.errorMessage}\nPlease Check https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2`
+): Promise<ReturnTypes | void> {
+  try {
+    const res = await fetch(
+      `https://itunes.apple.com/search?term=${encodeURI(
+        name
+      )}&entity=allArtist&attribute=allArtistTerm&limit=${
+        options.limit ?? "1"
+      }&lang=${options.language ?? "en"}&country=${options.country ?? "US"}`
     );
-  if (res) return res;
-  throw new Error("Artist not found.");
+
+    const json: ReturnTypes = await res.json();
+
+    return json;
+  } catch (e: any) {
+    const errorTouse: Error = e;
+    const { message, name, stack } = errorTouse;
+
+    console.log({ message, name, stack });
+  }
 }
 
 export async function getAlbum(
   name: string,
   options?: options
-): Promise<ReturnTypes> {
-  const res = await fetch(
-    `https://itunes.apple.com/search?term=${encodeURI(
-      name
-    )}&entity=album&limit=${options.limit ?? "1"}&lang=${
-      options.language ?? "en"
-    }&country=${options.country ?? "US"}`
-  )
-    .then((x) => x.json())
-    .catch((e) => console.log(e));
-
-  if (!res.resultCount) throw new Error("Resulsts are doesn't exist.");
-  if (res.errorMessage)
-    throw new TypeError(
-      `Unspecified language or country. ${res.errorMessage}\nPlease Check https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2`
+): Promise<ReturnTypes | void> {
+  try {
+    const res = await fetch(
+      `https://itunes.apple.com/search?term=${encodeURI(
+        name
+      )}&entity=album&limit=${options.limit ?? "1"}&lang=${
+        options.language ?? "en"
+      }&country=${options.country ?? "US"}`
     );
-  if (res) return res;
-  throw new Error("Album not found.");
+
+    const json: ReturnTypes = await res.json();
+
+    return json;
+  } catch (e: any) {
+    const errorTouse: Error = e;
+    const { message, name, stack } = errorTouse;
+
+    console.log({ message, name, stack });
+  }
 }
 
 export async function getApp(
   name: string,
   options?: options
-): Promise<ReturnTypes> {
-  const res = await fetch(
-    `https://itunes.apple.com/search?term=${encodeURI(
-      name
-    )}&entity=software&limit=${options.limit ?? "1"}&lang=${
-      options.language ?? "en"
-    }&country=${options.country ?? "US"}`
-  )
-    .then((x) => x.json())
-    .catch((e) => console.log(e));
-
-  if (!res.resultCount) throw new Error("Resulsts are doesn't exist.");
-  if (res.errorMessage)
-    throw new TypeError(
-      `Unspecified language or country. ${res.errorMessage}\nPlease Check https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2`
+): Promise<ReturnTypes | void> {
+  try {
+    const res = await fetch(
+      `https://itunes.apple.com/search?term=${encodeURI(
+        name
+      )}&entity=software&limit=${options.limit ?? "1"}&lang=${
+        options.language ?? "en"
+      }&country=${options.country ?? "US"}`
     );
-  if (res) return res;
-  throw new Error("App not found.");
+
+    const json: ReturnTypes = await res.json();
+
+    return json;
+  } catch (e: any) {
+    const errorTouse: Error = e;
+    const { message, name, stack } = errorTouse;
+
+    console.log({ message, name, stack });
+  }
 }
 
 export async function getMovie(
   name: string,
   options?: options
-): Promise<ReturnTypes> {
-  const res = await fetch(
-    `https://itunes.apple.com/search?term=${encodeURI(
-      name
-    )}&entity=movie&limit=${options.limit ?? "1"}&lang=${
-      options.language ?? "en"
-    }&country=${options.country ?? "US"}`
-  )
-    .then((x) => x.json())
-    .catch((e) => console.log(e));
-
-  if (!res.resultCount) throw new Error("Resulsts are doesn't exist.");
-  if (res.errorMessage)
-    throw new TypeError(
-      `Unspecified language or country. ${res.errorMessage}\nPlease Check https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2`
+): Promise<ReturnTypes | void> {
+  try {
+    const res = await fetch(
+      `https://itunes.apple.com/search?term=${encodeURI(
+        name
+      )}&entity=movie&limit=${options.limit ?? "1"}&lang=${
+        options.language ?? "en"
+      }&country=${options.country ?? "US"}`
     );
-  if (res) return res;
-  throw new Error("Movie not found.");
+
+    const json: ReturnTypes = await res.json();
+
+    return json;
+  } catch (e: any) {
+    const errorTouse: Error = e;
+    const { message, name, stack } = errorTouse;
+
+    console.log({ message, name, stack });
+  }
 }
 
 export async function getBook(
   name: string,
   options?: options
-): Promise<ReturnTypes> {
-  const res = await fetch(
-    `https://itunes.apple.com/search?term=${encodeURI(
-      name
-    )}&entity=ebook&limit=${options.limit ?? "1"}&lang=${
-      options.language ?? "en"
-    }&country=${options.country ?? "US"}`
-  )
-    .then((x) => x.json())
-    .catch((e) => console.log(e));
-
-  if (!res.resultCount) throw new Error("Resulsts are doesn't exist.");
-  if (res.errorMessage)
-    throw new TypeError(
-      `Unspecified language or country. ${res.errorMessage}\nPlease Check https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2`
+): Promise<ReturnTypes | void> {
+  try {
+    const res = await fetch(
+      `https://itunes.apple.com/search?term=${encodeURI(
+        name
+      )}&entity=ebook&limit=${options.limit ?? "1"}&lang=${
+        options.language ?? "en"
+      }&country=${options.country ?? "US"}`
     );
-  if (res) return res;
-  throw new Error("Book not found.");
+
+    const json: ReturnTypes = await res.json();
+
+    return json;
+  } catch (e: any) {
+    const errorTouse: Error = e;
+    const { message, name, stack } = errorTouse;
+
+    console.log({ message, name, stack });
+  }
 }
 
 export async function getVoiceBook(
   name: string,
   options?: options
-): Promise<ReturnTypes> {
-  const res = await fetch(
-    `https://itunes.apple.com/search?term=${encodeURI(
-      name
-    )}&entity=audiobook&limit=${options.limit ?? "1"}&lang=${
-      options.language ?? "en"
-    }&country=${options.country ?? "US"}`
-  )
-    .then((x) => x.json())
-    .catch((e) => console.log(e));
-
-  if (!res.resultCount) throw new Error("Resulsts are doesn't exist.");
-  if (res.errorMessage)
-    throw new TypeError(
-      `Unspecified language or country. ${res.errorMessage}\nPlease Check https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2`
+): Promise<ReturnTypes | void> {
+  try {
+    const res = await fetch(
+      `https://itunes.apple.com/search?term=${encodeURI(
+        name
+      )}&entity=audiobook&limit=${options.limit ?? "1"}&lang=${
+        options.language ?? "en"
+      }&country=${options.country ?? "US"}`
     );
-  if (res) return res;
-  throw new Error("Voice Book not found.");
+
+    const json: ReturnTypes = await res.json();
+
+    return json;
+  } catch (e: any) {
+    const errorTouse: Error = e;
+    const { message, name, stack } = errorTouse;
+
+    console.log({ message, name, stack });
+  }
 }
 
 export async function getPodcast(
   name: string,
   options?: options
-): Promise<ReturnTypes> {
-  const res = await fetch(
-    `https://itunes.apple.com/search?term=${encodeURI(
-      name
-    )}&entity=podcast&limit=${options.limit ?? "1"}&lang=${
-      options.language ?? "en"
-    }&country=${options.country ?? "US"}`
-  )
-    .then((x) => x.json())
-    .catch((e) => console.log(e));
-
-  if (!res.resultCount) throw new Error("Resulsts are doesn't exist.");
-  if (res.errorMessage)
-    throw new TypeError(
-      `Unspecified language or country. ${res.errorMessage}\nPlease Check https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2`
+): Promise<ReturnTypes | void> {
+  try {
+    const res = await fetch(
+      `https://itunes.apple.com/search?term=${encodeURI(
+        name
+      )}&entity=podcast&limit=${options.limit ?? "1"}&lang=${
+        options.language ?? "en"
+      }&country=${options.country ?? "US"}`
     );
-  if (res) return res;
-  throw new Error("Podcast not found.");
+
+    const json: ReturnTypes = await res.json();
+
+    return json;
+  } catch (e: any) {
+    const errorTouse: Error = e;
+    const { message, name, stack } = errorTouse;
+
+    console.log({ message, name, stack });
+  }
 }
 
 export async function getAll(
@@ -215,22 +224,23 @@ export async function getAll(
   entity: entity,
   attribute: attribute,
   options?: options
-): Promise<ReturnTypes> {
-  const res = await fetch(
-    `https://itunes.apple.com/search?term=${encodeURI(
-      name
-    )}&entity=${entity}&attribute=${attribute}&limit=${
-      options.limit ?? "1"
-    }&lang=${options.language ?? "en"}&country=${options.country ?? "US"}`
-  )
-    .then((x) => x.json())
-    .catch((e) => console.log(e));
-
-  if (!res.resultCount) throw new Error("Resulsts are doesn't exist.");
-  if (res.errorMessage)
-    throw new TypeError(
-      `Unspecified language or country. ${res.errorMessage}\nPlease Check https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2`
+): Promise<ReturnTypes | void> {
+  try {
+    const res = await fetch(
+      `https://itunes.apple.com/search?term=${encodeURI(
+        name
+      )}&entity=${entity}&attribute=${attribute}&limit=${
+        options.limit ?? "1"
+      }&lang=${options.language ?? "en"}&country=${options.country ?? "US"}`
     );
-  if (res) return res;
-  throw new Error("Resulsts are doesn't exist.");
+
+    const json: ReturnTypes = await res.json();
+
+    return json;
+  } catch (e: any) {
+    const errorTouse: Error = e;
+    const { message, name, stack } = errorTouse;
+
+    console.log({ message, name, stack });
+  }
 }
