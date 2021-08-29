@@ -2,19 +2,19 @@
   "compilerOptions": {
     "module": "commonjs",
     "outDir": "./dist/",
-    "sourceMap": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "es6",
+    "sourceMap": false,
+    "target": "ESNext",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "baseUrl": "./dist",
-    "incremental": true,
+    "incremental": false,
     "strict": true,
     "strictNullChecks": false,
     "declaration": true,
-    "typeRoots": ["node_modules/@types", "src/@types"],
-    "skipLibCheck": true
+    "inlineSourceMap": false,
+    "typeRoots": ["node_modules/@types/", "src/@types"],
+    "resolveJsonModule": true
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src"],
   "exclude": ["node_modules"]
 }
