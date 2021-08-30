@@ -19,15 +19,15 @@ import {
 
 export async function getSong(
   name: string,
-  options?: options
-): Promise<MusicReturn | void> {
+  options?: options,
+): Promise<MusicReturn> {
   try {
     const res = await fetch(
       `https://itunes.apple.com/search?term=${encodeURI(
-        name
-      )}&media=music&limit=${options.limit ?? "1"}&lang=${
-        options.language ?? "en"
-      }&country=${options.country ?? "US"}`
+        name,
+      )}&media=music&limit=${options?.limit ?? "1"}&lang=${
+        options?.language ?? "en"
+      }&country=${options?.country ?? "US"}`,
     );
 
     const json: MusicReturn = await res.json();
@@ -42,15 +42,15 @@ export async function getSong(
 
 export async function getSongVideo(
   name: string,
-  options?: options
-): Promise<MusicVideoReturn | void> {
+  options?: options,
+): Promise<MusicVideoReturn> {
   try {
     const res = await fetch(
       `https://itunes.apple.com/search?term=${encodeURI(
-        name
-      )}&media=musicVideo&limit=${options.limit ?? "1"}&lang=${
-        options.language ?? "en"
-      }&country=${options.country ?? "US"}`
+        name,
+      )}&media=musicVideo&limit=${options?.limit ?? "1"}&lang=${
+        options?.language ?? "en"
+      }&country=${options?.country ?? "US"}`,
     );
 
     const json: MusicVideoReturn = await res.json();
@@ -65,15 +65,15 @@ export async function getSongVideo(
 
 export async function getArtist(
   name: string,
-  options?: options
-): Promise<ArtistReturn | void> {
+  options?: options,
+): Promise<ArtistReturn> {
   try {
     const res = await fetch(
       `https://itunes.apple.com/search?term=${encodeURI(
-        name
+        name,
       )}&entity=allArtist&attribute=allArtistTerm&limit=${
-        options.limit ?? "1"
-      }&lang=${options.language ?? "en"}&country=${options.country ?? "US"}`
+        options?.limit ?? "1"
+      }&lang=${options?.language ?? "en"}&country=${options?.country ?? "US"}`,
     );
 
     const json: ArtistReturn = await res.json();
@@ -88,15 +88,15 @@ export async function getArtist(
 
 export async function getAlbum(
   name: string,
-  options?: options
-): Promise<AlbumReturn | void> {
+  options?: options,
+): Promise<AlbumReturn> {
   try {
     const res = await fetch(
       `https://itunes.apple.com/search?term=${encodeURI(
-        name
-      )}&entity=album&limit=${options.limit ?? "1"}&lang=${
-        options.language ?? "en"
-      }&country=${options.country ?? "US"}`
+        name,
+      )}&entity=album&limit=${options?.limit ?? "1"}&lang=${
+        options?.language ?? "en"
+      }&country=${options?.country ?? "US"}`,
     );
 
     const json: AlbumReturn = await res.json();
@@ -111,15 +111,15 @@ export async function getAlbum(
 
 export async function getApp(
   name: string,
-  options?: options
-): Promise<SoftwareReturn | void> {
+  options?: options,
+): Promise<SoftwareReturn> {
   try {
     const res = await fetch(
       `https://itunes.apple.com/search?term=${encodeURI(
-        name
-      )}&entity=software&limit=${options.limit ?? "1"}&lang=${
-        options.language ?? "en"
-      }&country=${options.country ?? "US"}`
+        name,
+      )}&entity=software&limit=${options?.limit ?? "1"}&lang=${
+        options?.language ?? "en"
+      }&country=${options?.country ?? "US"}`,
     );
 
     const json: SoftwareReturn = await res.json();
@@ -134,15 +134,15 @@ export async function getApp(
 
 export async function getMovie(
   name: string,
-  options?: options
-): Promise<MovieReturn | void> {
+  options?: options,
+): Promise<MovieReturn> {
   try {
     const res = await fetch(
       `https://itunes.apple.com/search?term=${encodeURI(
-        name
-      )}&entity=movie&limit=${options.limit ?? "1"}&lang=${
-        options.language ?? "en"
-      }&country=${options.country ?? "US"}`
+        name,
+      )}&entity=movie&limit=${options?.limit ?? "1"}&lang=${
+        options?.language ?? "en"
+      }&country=${options?.country ?? "US"}`,
     );
 
     const json: MovieReturn = await res.json();
@@ -157,15 +157,15 @@ export async function getMovie(
 
 export async function getBook(
   name: string,
-  options?: options
-): Promise<EbookReturn | void> {
+  options?: options,
+): Promise<EbookReturn> {
   try {
     const res = await fetch(
       `https://itunes.apple.com/search?term=${encodeURI(
-        name
-      )}&entity=ebook&limit=${options.limit ?? "1"}&lang=${
-        options.language ?? "en"
-      }&country=${options.country ?? "US"}`
+        name,
+      )}&entity=ebook&limit=${options?.limit ?? "1"}&lang=${
+        options?.language ?? "en"
+      }&country=${options?.country ?? "US"}`,
     );
 
     const json: EbookReturn = await res.json();
@@ -180,15 +180,15 @@ export async function getBook(
 
 export async function getVoiceBook(
   name: string,
-  options?: options
-): Promise<VoiceBookReturn | void> {
+  options?: options,
+): Promise<VoiceBookReturn> {
   try {
     const res = await fetch(
       `https://itunes.apple.com/search?term=${encodeURI(
-        name
-      )}&entity=audiobook&limit=${options.limit ?? "1"}&lang=${
-        options.language ?? "en"
-      }&country=${options.country ?? "US"}`
+        name,
+      )}&entity=audiobook&limit=${options?.limit ?? "1"}&lang=${
+        options?.language ?? "en"
+      }&country=${options?.country ?? "US"}`,
     );
 
     const json: VoiceBookReturn = await res.json();
@@ -203,15 +203,15 @@ export async function getVoiceBook(
 
 export async function getPodcast(
   name: string,
-  options?: options
-): Promise<PodcastReturn | void> {
+  options?: options,
+): Promise<PodcastReturn> {
   try {
     const res = await fetch(
       `https://itunes.apple.com/search?term=${encodeURI(
-        name
-      )}&entity=podcast&limit=${options.limit ?? "1"}&lang=${
-        options.language ?? "en"
-      }&country=${options.country ?? "US"}`
+        name,
+      )}&entity=podcast&limit=${options?.limit ?? "1"}&lang=${
+        options?.language ?? "en"
+      }&country=${options?.country ?? "US"}`,
     );
 
     const json: PodcastReturn = await res.json();
@@ -228,15 +228,15 @@ export async function getAll(
   name: string,
   entity: entity,
   attribute: attribute,
-  options?: options
-): Promise<AllReturn | void> {
+  options?: options,
+): Promise<AllReturn> {
   try {
     const res = await fetch(
       `https://itunes.apple.com/search?term=${encodeURI(
-        name
+        name,
       )}&entity=${entity}&attribute=${attribute}&limit=${
-        options.limit ?? "1"
-      }&lang=${options.language ?? "en"}&country=${options.country ?? "US"}`
+        options?.limit ?? "1"
+      }&lang=${options?.language ?? "en"}&country=${options?.country ?? "US"}`,
     );
 
     const json: AllReturn = await res.json();
