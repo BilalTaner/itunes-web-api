@@ -23,11 +23,11 @@ export async function getSong(
 ): Promise<MusicReturn> {
   try {
     const res = await fetch(
-      `https://itunes.apple.com/search?term=${encodeURI(
+      `https://itunes.apple.com/search?term=${encodeURIComponent(
         name,
-      )}&media=music&limit=${options?.limit ?? "1"}&lang=${
-        options?.language ?? "en"
-      }&country=${options?.country ?? "US"}`,
+      )}&media=music&limit=${options.limit ?? "1"}&lang=${
+        options.language ?? "en"
+      }&country=${options.country ?? "US"}`,
     );
 
     return (await res.json()) as MusicReturn;
@@ -44,11 +44,11 @@ export async function getSongVideo(
 ): Promise<MusicVideoReturn> {
   try {
     const res = await fetch(
-      `https://itunes.apple.com/search?term=${encodeURI(
+      `https://itunes.apple.com/search?term=${encodeURIComponent(
         name,
-      )}&media=musicVideo&limit=${options?.limit ?? "1"}&lang=${
-        options?.language ?? "en"
-      }&country=${options?.country ?? "US"}`,
+      )}&media=musicVideo&limit=${options.limit ?? "1"}&lang=${
+        options.language ?? "en"
+      }&country=${options.country ?? "US"}`,
     );
 
     return (await res.json()) as MusicVideoReturn;
@@ -65,11 +65,11 @@ export async function getArtist(
 ): Promise<ArtistReturn> {
   try {
     const res = await fetch(
-      `https://itunes.apple.com/search?term=${encodeURI(
+      `https://itunes.apple.com/search?term=${encodeURIComponent(
         name,
       )}&entity=allArtist&attribute=allArtistTerm&limit=${
-        options?.limit ?? "1"
-      }&lang=${options?.language ?? "en"}&country=${options?.country ?? "US"}`,
+        options.limit ?? "1"
+      }&lang=${options.language ?? "en"}&country=${options.country ?? "US"}`,
     );
 
     return (await res.json()) as ArtistReturn;
@@ -86,11 +86,11 @@ export async function getAlbum(
 ): Promise<AlbumReturn> {
   try {
     const res = await fetch(
-      `https://itunes.apple.com/search?term=${encodeURI(
+      `https://itunes.apple.com/search?term=${encodeURIComponent(
         name,
-      )}&entity=album&limit=${options?.limit ?? "1"}&lang=${
-        options?.language ?? "en"
-      }&country=${options?.country ?? "US"}`,
+      )}&entity=album&limit=${options.limit ?? "1"}&lang=${
+        options.language ?? "en"
+      }&country=${options.country ?? "US"}`,
     );
 
     return (await res.json()) as AlbumReturn;
@@ -107,11 +107,11 @@ export async function getApp(
 ): Promise<SoftwareReturn> {
   try {
     const res = await fetch(
-      `https://itunes.apple.com/search?term=${encodeURI(
+      `https://itunes.apple.com/search?term=${encodeURIComponent(
         name,
-      )}&entity=software&limit=${options?.limit ?? "1"}&lang=${
-        options?.language ?? "en"
-      }&country=${options?.country ?? "US"}`,
+      )}&entity=software&limit=${options.limit ?? "1"}&lang=${
+        options.language ?? "en"
+      }&country=${options.country ?? "US"}`,
     );
 
     return (await res.json()) as SoftwareReturn;
@@ -128,11 +128,11 @@ export async function getMovie(
 ): Promise<MovieReturn> {
   try {
     const res = await fetch(
-      `https://itunes.apple.com/search?term=${encodeURI(
+      `https://itunes.apple.com/search?term=${encodeURIComponent(
         name,
-      )}&entity=movie&limit=${options?.limit ?? "1"}&lang=${
-        options?.language ?? "en"
-      }&country=${options?.country ?? "US"}`,
+      )}&entity=movie&limit=${options.limit ?? "1"}&lang=${
+        options.language ?? "en"
+      }&country=${options.country ?? "US"}`,
     );
 
     return (await res.json()) as MovieReturn;
@@ -149,11 +149,11 @@ export async function getBook(
 ): Promise<EbookReturn> {
   try {
     const res = await fetch(
-      `https://itunes.apple.com/search?term=${encodeURI(
+      `https://itunes.apple.com/search?term=${encodeURIComponent(
         name,
-      )}&entity=ebook&limit=${options?.limit ?? "1"}&lang=${
-        options?.language ?? "en"
-      }&country=${options?.country ?? "US"}`,
+      )}&entity=ebook&limit=${options.limit ?? "1"}&lang=${
+        options.language ?? "en"
+      }&country=${options.country ?? "US"}`,
     );
 
     return (await res.json()) as EbookReturn;
@@ -170,11 +170,11 @@ export async function getVoiceBook(
 ): Promise<VoiceBookReturn> {
   try {
     const res = await fetch(
-      `https://itunes.apple.com/search?term=${encodeURI(
+      `https://itunes.apple.com/search?term=${encodeURIComponent(
         name,
-      )}&entity=audiobook&limit=${options?.limit ?? "1"}&lang=${
-        options?.language ?? "en"
-      }&country=${options?.country ?? "US"}`,
+      )}&entity=audiobook&limit=${options.limit ?? "1"}&lang=${
+        options.language ?? "en"
+      }&country=${options.country ?? "US"}`,
     );
 
     return (await res.json()) as VoiceBookReturn;
@@ -191,11 +191,11 @@ export async function getPodcast(
 ): Promise<PodcastReturn> {
   try {
     const res = await fetch(
-      `https://itunes.apple.com/search?term=${encodeURI(
+      `https://itunes.apple.com/search?term=${encodeURIComponent(
         name,
-      )}&entity=podcast&limit=${options?.limit ?? "1"}&lang=${
-        options?.language ?? "en"
-      }&country=${options?.country ?? "US"}`,
+      )}&entity=podcast&limit=${options.limit ?? "1"}&lang=${
+        options.language ?? "en"
+      }&country=${options.country ?? "US"}`,
     );
 
     return (await res.json()) as PodcastReturn;
@@ -214,11 +214,11 @@ export async function getAll(
 ): Promise<AllReturn> {
   try {
     const res = await fetch(
-      `https://itunes.apple.com/search?term=${encodeURI(
+      `https://itunes.apple.com/search?term=${encodeURIComponent(
         name,
       )}&entity=${entity}&attribute=${attribute}&limit=${
-        options?.limit ?? "1"
-      }&lang=${options?.language ?? "en"}&country=${options?.country ?? "US"}`,
+        options.limit ?? "1"
+      }&lang=${options.language ?? "en"}&country=${options.country ?? "US"}`,
     );
 
     return (await res.json()) as AllReturn;

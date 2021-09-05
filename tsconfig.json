@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "outDir": "./dist/",
+    "outDir": "./dist",
     "sourceMap": false,
     "target": "ESNext",
     "moduleResolution": "node",
@@ -12,7 +12,7 @@
     "strictNullChecks": false,
     "declaration": true,
     "inlineSourceMap": false,
-    "typeRoots": ["node_modules/@types/", "src/@types"],
+    "typeRoots": ["node_modules/@types", "src/@types"],
     "resolveJsonModule": true
   },
   "include": ["src"],

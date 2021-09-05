@@ -40,7 +40,7 @@ export type attribute =
   | "albumTerm";
 
 export interface options {
-  limit: number;
+  limit?: number;
   language?: string;
   country?: string;
 }
