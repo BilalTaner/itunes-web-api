@@ -30,9 +30,7 @@ export async function getSong(
       }&country=${options?.country ?? "US"}`,
     );
 
-    const json: MusicReturn = await res.json();
-
-    return json;
+    return (await res.json()) as MusicReturn;
   } catch (e: any) {
     const { message, name, stack }: Error = e;
 
@@ -53,9 +51,7 @@ export async function getSongVideo(
       }&country=${options?.country ?? "US"}`,
     );
 
-    const json: MusicVideoReturn = await res.json();
-
-    return json;
+    return (await res.json()) as MusicVideoReturn;
   } catch (e: any) {
     const { message, name, stack }: Error = e;
 
@@ -76,9 +72,7 @@ export async function getArtist(
       }&lang=${options?.language ?? "en"}&country=${options?.country ?? "US"}`,
     );
 
-    const json: ArtistReturn = await res.json();
-
-    return json;
+    return (await res.json()) as ArtistReturn;
   } catch (e: any) {
     const { message, name, stack }: Error = e;
 
@@ -99,9 +93,7 @@ export async function getAlbum(
       }&country=${options?.country ?? "US"}`,
     );
 
-    const json: AlbumReturn = await res.json();
-
-    return json;
+    return (await res.json()) as AlbumReturn;
   } catch (e: any) {
     const { message, name, stack }: Error = e;
 
@@ -122,9 +114,7 @@ export async function getApp(
       }&country=${options?.country ?? "US"}`,
     );
 
-    const json: SoftwareReturn = await res.json();
-
-    return json;
+    return (await res.json()) as SoftwareReturn;
   } catch (e: any) {
     const { message, name, stack }: Error = e;
 
@@ -145,9 +135,7 @@ export async function getMovie(
       }&country=${options?.country ?? "US"}`,
     );
 
-    const json: MovieReturn = await res.json();
-
-    return json;
+    return (await res.json()) as MovieReturn;
   } catch (e: any) {
     const { message, name, stack }: Error = e;
 
@@ -168,9 +156,7 @@ export async function getBook(
       }&country=${options?.country ?? "US"}`,
     );
 
-    const json: EbookReturn = await res.json();
-
-    return json;
+    return (await res.json()) as EbookReturn;
   } catch (e: any) {
     const { message, name, stack }: Error = e;
 
@@ -191,9 +177,7 @@ export async function getVoiceBook(
       }&country=${options?.country ?? "US"}`,
     );
 
-    const json: VoiceBookReturn = await res.json();
-
-    return json;
+    return (await res.json()) as VoiceBookReturn;
   } catch (e: any) {
     const { message, name, stack }: Error = e;
 
@@ -214,9 +198,7 @@ export async function getPodcast(
       }&country=${options?.country ?? "US"}`,
     );
 
-    const json: PodcastReturn = await res.json();
-
-    return json;
+    return (await res.json()) as PodcastReturn;
   } catch (e: any) {
     const { message, name, stack }: Error = e;
 
@@ -239,9 +221,7 @@ export async function getAll(
       }&lang=${options?.language ?? "en"}&country=${options?.country ?? "US"}`,
     );
 
-    const json: AllReturn = await res.json();
-
-    return json;
+    return (await res.json()) as AllReturn;
   } catch (e: any) {
     const { message, name, stack }: Error = e;
 
